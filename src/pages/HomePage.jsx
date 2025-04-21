@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "../api/tmbdApi";
-import { Link } from "react-router-dom";
+import MovieList from "../components/MovieList/MovieList";
 
-export default function HomePage() {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetchTrendingMovies().then(setMovies).catch(console.error);
+    const fetchData = async () => {
+      const results = await fetchTrendingMovies();
+      setMovies(results);
+    };
+
+    fetchData();
   }, []);
 
   return (
     <main>
       <h1>Trending Today</h1>
-      <ul>
-        {movies.map(({ id, title }) => (
-          <li key={id}>
-            <Link to={`/movies/${id}`}>{title}</Link>
-          </li>
-        ))}
-      </ul>
+      <MovieList movies={movies} />
     </main>
   );
-}
+};
+
+export default HomePage;

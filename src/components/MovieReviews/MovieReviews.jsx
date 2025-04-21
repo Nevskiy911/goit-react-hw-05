@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchMovieReviews } from "../../api/tmbdApi";
+import s from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -29,7 +30,7 @@ const MovieReviews = () => {
       {reviews.length === 0 ? (
         <p>We haven't any reviews for this movie.</p>
       ) : (
-        <ul>
+        <ul className={s.list}>
           {reviews.map(({ id, author, content }) => (
             <li key={id} style={{ marginBottom: "1rem" }}>
               <h4>Author: {author}</h4>

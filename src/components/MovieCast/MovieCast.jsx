@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieCredits } from "../../api/tmbdApi";
+import s from "./MovieCast.module.css";
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -11,9 +12,9 @@ export default function MovieCast() {
   }, [movieId]);
 
   return (
-    <ul style={{ listStyle: "none", padding: 0 }}>
+    <ul style={{ listStyle: "none", padding: 0 }} className={s.list}>
       {cast.map((actor) => (
-        <li key={actor.id} style={{ marginBottom: "20px" }}>
+        <li key={actor.id} style={{ marginBottom: "20px" }} className={s.item}>
           {actor.profile_path ? (
             <img
               src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
@@ -27,10 +28,10 @@ export default function MovieCast() {
               No Image
             </div>
           )}
-          <p>
+          <p className={s.descr}>
             <strong>{actor.name}</strong>
           </p>
-          <p>as {actor.character}</p>
+          <p className={s.descr}>as {actor.character}</p>
         </li>
       ))}
     </ul>

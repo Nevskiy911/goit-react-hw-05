@@ -1,0 +1,14 @@
+.list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 150px;
+}
+
+.descr {
+    width: 100px;
+}

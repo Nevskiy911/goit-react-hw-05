@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { searchMovies } from "../api/tmbdApi";
 import MovieList from "../components/MovieList/MovieList";
+import "../styles/Form.css";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -42,6 +43,7 @@ const MoviesPage = () => {
           name="search"
           placeholder="Search..."
           defaultValue={query}
+          className="input"
         />
         <button type="submit">Search</button>
       </form>

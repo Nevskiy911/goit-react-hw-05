@@ -1,0 +1,44 @@
+.active-link {
+    color: gray;
+    pointer-events: none;
+    text-decoration: underline;
+}
+
+.main-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.info-line {
+    margin-bottom: 25px;
+}
+
+
+.movie-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.movie-descr {
+    margin: 50px;
+}
